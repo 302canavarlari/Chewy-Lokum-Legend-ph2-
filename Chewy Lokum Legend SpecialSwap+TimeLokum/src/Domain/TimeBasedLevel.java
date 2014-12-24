@@ -23,6 +23,7 @@ public class TimeBasedLevel extends Level {
 		super(2,row,column,target,moveLeft,isUnlocked);
 		targetTimeInSeconds = target;
 		
+		
 	}
 
 }

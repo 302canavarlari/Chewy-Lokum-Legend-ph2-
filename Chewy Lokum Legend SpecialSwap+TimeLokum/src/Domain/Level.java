@@ -57,11 +57,10 @@ public abstract class Level {
 
 	}
 	public int getMoveLeft() {
-		// TODO Auto-generated method stub
 		return moveLeft;
 	}
+	
 	public boolean IsTimeLevel() {
-		// TODO Auto-generated method stub
 		if(type==2){
 			return true;
 		}

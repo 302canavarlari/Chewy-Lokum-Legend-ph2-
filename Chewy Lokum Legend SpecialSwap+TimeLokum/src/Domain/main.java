@@ -32,9 +32,7 @@ public class main {
     	 else 
     	gg = new GameGUI(CreateLevels.setOfLevels[wc.getLevelIndex()],wc.getLevelIndex(),str,wc.getStartFromSave()); 
 	 }
- 
-	
-	 
+
 	 public static void dis(){
 		 gg.dispose();
 		 

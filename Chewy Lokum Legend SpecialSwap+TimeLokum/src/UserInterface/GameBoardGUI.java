@@ -96,7 +96,8 @@ public class GameBoardGUI extends JComponent implements ActionListener{
 			gameBoard = new Board(sg.boardStatus, sg.boardRowNo, sg.boardColNo,ib,IsTimeNecessary);
 			solver=new GameEngine(gameBoard,ib);
 			ib.setCurrentScore(sg.currentScore);
-			ib.setMoveLeft(sg.moveLeft);
+			if (IsTimeNecessary) ib.setTimeLeft(sg.moveLeft);
+			else ib.setMoveLeft(sg.moveLeft);
 			solver=new GameEngine(gameBoard,ib);
 			solver.didStarted=true;
 
@@ -184,7 +185,7 @@ public class GameBoardGUI extends JComponent implements ActionListener{
 					}
 					else if(clicked.type==99){
 						gameBoard.serdarinGucu(focus);
-					}else if(clicked.type>10&&focus.type>10){
+					}else if(clicked.type>10&&focus.type>10&&clicked.type<40&&focus.type<40){
 						gameBoard.specialMove(focus,clicked);
 					}
 

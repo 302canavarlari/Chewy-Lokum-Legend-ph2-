@@ -73,19 +73,19 @@ public class ImageLibrary {
 		} catch (IOException e) { System.out.println(e.getMessage()); }
 		try {
 			img = ImageIO.read(new File("Images/whiteWrapped.png"));
-			imageCollection.put(33, img);
+			imageCollection.put(43, img);
 		} catch (IOException e) { System.out.println(e.getMessage()); }
 		try {
 			img = ImageIO.read(new File("Images/redWrapped.png"));
-			imageCollection.put(31, img);
+			imageCollection.put(41, img);
 		} catch (IOException e) { System.out.println(e.getMessage()); }
 		try {
 			img = ImageIO.read(new File("Images/greenWrapped.png"));
-			imageCollection.put(32, img);
+			imageCollection.put(42, img);
 		} catch (IOException e) { System.out.println(e.getMessage()); }
 		try {
 			img = ImageIO.read(new File("Images/brownWrapped.png"));
-			imageCollection.put(34, img);
+			imageCollection.put(44, img);
 		} catch (IOException e) { System.out.println(e.getMessage()); }
 		try {
 			img = ImageIO.read(new File("Images/skull.png"));
@@ -94,8 +94,8 @@ public class ImageLibrary {
 		try {
 			img = ImageIO.read(new File("Images/smile.png"));
 			imageCollection.put(65, img);
-			} catch (IOException e) { System.out.println(e.getMessage()); }
-		
+		} catch (IOException e) { System.out.println(e.getMessage()); }
+
 	}
 	public Image getImage(int type) {
 		return imageCollection.get(type);

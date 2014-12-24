@@ -32,6 +32,7 @@ public class Board extends JComponent{
 	InfoBoard infb;
 	public GameEngine solver;
 	public static  GameObjects[][] board;
+	public boolean isTimedLevel;
 
 	/**
 	 * Construct the board.
@@ -44,6 +45,7 @@ public class Board extends JComponent{
 		infb = ib;
 		solver=new GameEngine(this, ib);
 		rowNo = row;
+		isTimedLevel=TimedLevel;
 		columnNo = column;
 		board = new GameObjects[row][column];
 //		if(TimedLevel){
@@ -57,6 +59,7 @@ public class Board extends JComponent{
 	public Board(String s, int row, int column,InfoBoard ib,boolean TimedLevel){
 		infb = ib;
 		rowNo = row;
+		isTimedLevel=TimedLevel;
 		columnNo = column;
 		board = new GameObjects[row][column];
 		StringTokenizer st = new StringTokenizer(s);
@@ -142,7 +145,8 @@ public class Board extends JComponent{
 		board[r1][c1] = l2;
 		board[r2][c2] = l1;
 		if(!GameBoardGUI.solver.isStable()){
-			decreaseMoves();
+			if(!isTimedLevel){
+			decreaseMoves();}
 		}
 		if(!infb.getSpecialSwapEnabled()){
 			if(GameBoardGUI.solver.isStable()){
@@ -231,7 +235,7 @@ public class Board extends JComponent{
 
 	public Lokum createRandomLokumWithTime(int lokumNum, int row, int col) {
 		TimeLokum lok = null;
-		lok = new TimeLokum(lokumNum +31,row,col);
+		lok = new TimeLokum(lokumNum +41,row,col);
 		return lok;	
 	}
 }

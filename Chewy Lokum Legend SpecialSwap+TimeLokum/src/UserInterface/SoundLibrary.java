@@ -20,7 +20,7 @@ public class SoundLibrary {
         
         
         try {
-        //InputStream test = new FileInputStream("file:Alaturka Game Of Thrones Jenerik Müzigi.wav");
+        //InputStream test = new FileInputStream("file:Alaturka Game Of Thrones Jenerik Muzigi.wav");
         select = Applet.newAudioClip(new URL("file:select.wav"));
         match = Applet.newAudioClip(new URL("file:match.wav"));
        fall = Applet.newAudioClip(new URL("file:Background.wav"));
@@ -47,7 +47,7 @@ public class SoundLibrary {
 //  		      try {
 //  		        Clip clip = AudioSystem.getClip();
 //  		        AudioInputStream inputStream = AudioSystem.getAudioInputStream(
-//  		          main.class.getResourceAsStream("file:Alaturka Game Of Thrones Jenerik Müzigi.wav" + url));
+//  		          main.class.getResourceAsStream("file:Alaturka Game Of Thrones Jenerik Muzigi.wav" + url));
 //  		        clip.open(inputStream);
 //  		        clip.start(); 
 //  		      } catch (Exception e) {

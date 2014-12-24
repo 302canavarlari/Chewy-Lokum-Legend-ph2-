@@ -47,10 +47,9 @@ public class GameGUI extends JFrame {
 
 
 	public GameGUI(Level levelNo, int levelNum) {
-		Panel= new InfoBoard(levelNum);
 
 		if(!levelNo.IsTimeLevel()){
-
+			Panel= new InfoBoard(levelNum,false);
 			gb= new GameBoardGUI(levelNo.getRow(),
 					levelNo.getColumn(),Panel,false,false);
 			this.setPreferredSize(new Dimension(levelNo.getColumn()*50+200,levelNo.getRow()*50+50)); 
@@ -65,6 +64,7 @@ public class GameGUI extends JFrame {
 			setVisible(true);
 		}
 		else {
+			Panel= new InfoBoard(levelNum,true);
 			gb= new GameBoardGUI(levelNo.getRow(),
 					levelNo.getColumn(),Panel,false,true);
 			this.setPreferredSize(new Dimension(levelNo.getColumn()*50+200,levelNo.getRow()*50+50)); 
@@ -82,8 +82,8 @@ public class GameGUI extends JFrame {
 	}
 
 	public GameGUI(Level levelNo, int levelNum, String SaveFileName, boolean saveState) {
-		Panel= new InfoBoard(levelNum);
 		if(!levelNo.IsTimeLevel()){
+			Panel= new InfoBoard(levelNum,false);
 
 			gb= new GameBoardGUI(levelNo.getRow(),
 					levelNo.getColumn(),Panel,saveState,SaveFileName,false);
@@ -100,6 +100,8 @@ public class GameGUI extends JFrame {
 		}
 
 		else{
+			Panel= new InfoBoard(levelNum,true);
+
 			gb= new GameBoardGUI(levelNo.getRow(),
 					levelNo.getColumn(),Panel,saveState,SaveFileName,true);
 			this.setPreferredSize(new Dimension(levelNo.getColumn()*50+200,levelNo.getRow()*50+50)); 

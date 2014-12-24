@@ -84,7 +84,7 @@ public class GameEngine extends JComponent{
 			for(int col= 0; col < b.getCol(); col++)
 			{
 				Lokum temp= b.getLokumAt(row, col);
-				if(temp.type==color||temp.type==99){
+				if(temp.type%10==color%10||temp.type==99){
 					temp.type=0;
 					count++;
 				}
@@ -101,6 +101,19 @@ public class GameEngine extends JComponent{
 		score = panel.getCurrentScore();
 		boolean dummy;
 		for (ArrayList<Lokum> tempSilinecekLokum: silinecekLokum){
+			for(int i =0; i < tempSilinecekLokum.size();i++){
+				Lokum lokum= tempSilinecekLokum.get(i);
+				System.out.println(lokum.type);
+
+				if(lokum.type>=41&&lokum.type<=44){
+					System.out.println(lokum.type);
+					panel.setTimeLeft(panel.getTimeLeft()+5);
+					System.out.println(" pedric patladi");
+
+				}
+
+
+			}
 			dummy=false;
 			if(didStarted){
 				if (tempSilinecekLokum.size() == 5) {
@@ -279,13 +292,19 @@ public class GameEngine extends JComponent{
 				Lokum lok = b.getLokumAt(row, col);
 				if (lok.type == 0){
 					int LokumNum = rand.nextInt(4);
-					int timed=rand.nextInt(10);
-					if(timed<9||!didStarted){
-						Lokum randLok = b.createRandomLokum(LokumNum,row,col);
-						b.putLokumAt(row, col, randLok);
+					int timed=rand.nextInt(20);
+					if(b.isTimedLevel){
+						if(timed<19||!didStarted){
+							Lokum randLok = b.createRandomLokum(LokumNum,row,col);
+							b.putLokumAt(row, col, randLok);
+						}
+						else{
+							Lokum randLok=b.createRandomLokumWithTime(LokumNum, row, col);
+							b.putLokumAt(row, col, randLok);
+						}
 					}
 					else{
-						Lokum randLok=b.createRandomLokumWithTime(LokumNum, row, col);
+						Lokum randLok = b.createRandomLokum(LokumNum,row,col);
 						b.putLokumAt(row, col, randLok);
 					}
 				}
@@ -319,6 +338,7 @@ public class GameEngine extends JComponent{
 					else { break;}
 				}
 				if (tempSilinecekLokum.size() > 2){ 
+
 					this.silinecekLokum.add(tempSilinecekLokum);
 				}
 				col = tmp - 1;
@@ -342,6 +362,7 @@ public class GameEngine extends JComponent{
 					else { break;}
 				}
 				if (tempSilinecekLokum.size() > 2){
+
 					this.silinecekLokum.add(tempSilinecekLokum);
 					row = tmp - 1;
 				}

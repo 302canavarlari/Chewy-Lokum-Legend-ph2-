@@ -23,6 +23,7 @@ public class SaveFileGenerator {
 	public static int currentScore ;
 	public static int currentLevel;
 	public static int moveLeft;
+	public static int currentSpecialMove;
 	public static int boardRowNo;
 	public static int boardColNo;
 	public static String playerName;
