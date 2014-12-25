@@ -84,7 +84,7 @@ public class InfoBoard extends JPanel implements ActionListener{
 	public InfoBoard(int levelNo, boolean timeLevel){
 		timeLevelmi=timeLevel;
 		levelNumber = levelNo;
-		specialSwapLeftWithNumber = levelNo+1;
+		specialSwapLeftWithNumber = levelNo+11;
 		privateScoreWithNumber = 0;
 		specialSwapEnabled = false;
 
@@ -221,10 +221,10 @@ public class InfoBoard extends JPanel implements ActionListener{
 		t.cancel();}
 		JFrame frame = new JFrame ("You Lose");
 		String[] s=new String[8];
-		ImageIcon imageIcon = new ImageIcon(imageLibrary.getImage(66));
+		ImageIcon imageIcon = new ImageIcon(imageLibrary.getImage(77));
 		Object[] options = {"New Game","Exit Game"};
 		int n = JOptionPane.showOptionDialog(frame,
-				"Vakit cok gec gemi kalkiyor artik. Ah o ..."+ "","You Lose",
+				"Vakit cok gec gemi kalkiyor artik.\n Ah o gemide bende olsaydim. \n Acik denizlere yol alsaydim."+ "","Vaktin kalmadı be gülüm",
 				JOptionPane.YES_NO_OPTION,
 				JOptionPane.QUESTION_MESSAGE,
 				imageIcon,

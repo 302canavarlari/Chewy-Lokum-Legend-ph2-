@@ -144,17 +144,18 @@ public class Board extends JComponent{
 
 		board[r1][c1] = l2;
 		board[r2][c2] = l1;
+		
+		if(!infb.getSpecialSwapEnabled()){
 		if(!GameBoardGUI.solver.isStable()){
 			if(!isTimedLevel){
 			decreaseMoves();}
 		}
-		if(!infb.getSpecialSwapEnabled()){
+		
 			if(GameBoardGUI.solver.isStable()){
 				MoveBack(l1,l2);
 			} 	
 			}else infb.setSpecialMove(); 	
 		GameGUI.gb.cleanBoard();
-
 		GameGUI.gb.repaint();
 		GameGUI.gb.updateGame();
 		GameGUI.gb.checkGameOver();

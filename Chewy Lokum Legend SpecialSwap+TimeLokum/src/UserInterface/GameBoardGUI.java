@@ -174,7 +174,7 @@ public class GameBoardGUI extends JComponent implements ActionListener{
 				focus = null;
 			}
 			else {
-				if(focus.isNeighbor(clicked)){
+				if(focus.isNeighbor(clicked) || ib.getSpecialSwapEnabled()){
 					if(focus.type==99){
 						if(clicked.type==99){
 							gameBoard.serdarinSuperGucu();

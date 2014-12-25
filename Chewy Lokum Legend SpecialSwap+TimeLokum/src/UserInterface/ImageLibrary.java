@@ -24,6 +24,10 @@ public class ImageLibrary {
 			imageCollection.put(99, img);
 		} catch (IOException e) { System.out.println(e.getMessage()); }
 		try {
+			img = ImageIO.read(new File("Images/ismailAbi.png"));
+			imageCollection.put(77, img);
+		} catch (IOException e) { System.out.println(e.getMessage()); }
+		try {
 			img = ImageIO.read(new File("Images/red.png"));
 			imageCollection.put(1, img);
 		} catch (IOException e) { System.out.println(e.getMessage()); }
