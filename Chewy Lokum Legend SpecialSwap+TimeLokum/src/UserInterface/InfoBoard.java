@@ -58,7 +58,8 @@ public class InfoBoard extends JPanel implements ActionListener{
 	GameGUI gui;
 	Timer t;
 	boolean timeLevelmi;
-	boolean timerAktifmi;
+	public boolean timerAktifmi;
+	public boolean timerGUIAktifEdilsinMi;
 
 
 	int delay = 1000;
@@ -82,9 +83,10 @@ public class InfoBoard extends JPanel implements ActionListener{
 	 * @modifies 	shows updated info board.
 	 */
 	public InfoBoard(int levelNo, boolean timeLevel){
+		timerGUIAktifEdilsinMi = true;
 		timeLevelmi=timeLevel;
 		levelNumber = levelNo;
-		specialSwapLeftWithNumber = levelNo+11;
+		specialSwapLeftWithNumber = levelNo+1;
 		privateScoreWithNumber = 0;
 		specialSwapEnabled = false;
 
@@ -114,7 +116,7 @@ public class InfoBoard extends JPanel implements ActionListener{
 			add(timeLeft);
 			
 				t = new Timer();
-				t.schedule(gorev,0,delay);
+				t.schedule(gorev,delay,delay);
 		}
 		else
 		{
@@ -140,7 +142,7 @@ public class InfoBoard extends JPanel implements ActionListener{
 	
 	public void setTimeLeft(int timeLeft){
 		timeLeftWithNumber = timeLeft;
-		this.timeLeft.setText(Integer.toString(timeLeftWithNumber));
+		if(timerGUIAktifEdilsinMi) this.timeLeft.setText(Integer.toString(timeLeftWithNumber));
 	}
 
 	/**
@@ -194,12 +196,12 @@ public class InfoBoard extends JPanel implements ActionListener{
 
 	public void setboardRowNumber(int rn){
 		boardRowNumber = rn;
-		System.out.println(boardRowNumber);
+//		System.out.println(boardRowNumber);
 	}
 
 	public void setboardColNumber(int rn){
 		boardColNumber = rn;
-		System.out.println(boardColNumber);
+//		System.out.println(boardColNumber);
 	}
 	public String toString() {
 		String s = "Move Left: " + Integer.toString(moveLeftWithNumber)+ "Current Score: " + Integer.toString(privateScoreWithNumber) ;

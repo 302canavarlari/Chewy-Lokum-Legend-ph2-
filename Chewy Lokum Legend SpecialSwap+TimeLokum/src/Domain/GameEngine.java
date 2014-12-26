@@ -28,14 +28,14 @@ import javax.swing.JFrame;
 import UserInterface.*;
 import Domain.*;
 public class GameEngine extends JComponent{
-	Board b ;
+	public Board b ;
 	int score;
 	boolean shouldMixBoard;
 	public ImageIcon boardIcon;
 	public boolean didStarted;
 	private InfoBoard panel;
 	Random rand = new Random(); 
-	ArrayList<ArrayList<Lokum>> silinecekLokum = new ArrayList<ArrayList<Lokum>>();
+	public ArrayList<ArrayList<Lokum>> silinecekLokum = new ArrayList<ArrayList<Lokum>>();
 	//GameEngine construct with InfoBoard.
 	public GameEngine(Board bo,InfoBoard ib) {
 		didStarted=false;
@@ -103,12 +103,12 @@ public class GameEngine extends JComponent{
 		for (ArrayList<Lokum> tempSilinecekLokum: silinecekLokum){
 			for(int i =0; i < tempSilinecekLokum.size();i++){
 				Lokum lokum= tempSilinecekLokum.get(i);
-				System.out.println(lokum.type);
+//				System.out.println(lokum.type);
 
 				if(lokum.type>=41&&lokum.type<=44){
-					System.out.println(lokum.type);
+//					System.out.println(lokum.type);
 					panel.setTimeLeft(panel.getTimeLeft()+5);
-					System.out.println(" pedric patladi");
+//					System.out.println(" pedric patladi");
 
 				}
 

@@ -31,7 +31,7 @@ public class Board extends JComponent{
 	int columnNo ;
 	InfoBoard infb;
 	public GameEngine solver;
-	public static  GameObjects[][] board;
+	public static  Lokum[][] board;
 	public boolean isTimedLevel;
 
 	/**
@@ -47,7 +47,7 @@ public class Board extends JComponent{
 		rowNo = row;
 		isTimedLevel=TimedLevel;
 		columnNo = column;
-		board = new GameObjects[row][column];
+		board = new Lokum[row][column];
 //		if(TimedLevel){
 //			fillInitialBoard();
 //		}
@@ -61,7 +61,7 @@ public class Board extends JComponent{
 		rowNo = row;
 		isTimedLevel=TimedLevel;
 		columnNo = column;
-		board = new GameObjects[row][column];
+		board = new Lokum[row][column];
 		StringTokenizer st = new StringTokenizer(s);
 		while (st.hasMoreTokens()) {
 			for(int r=0;r<rowNo;r++){
@@ -80,7 +80,7 @@ public class Board extends JComponent{
 	public int getCol(){
 		return columnNo;
 	}
-	public GameObjects[][] getBoardArray(){
+	public Lokum[][] getBoardArray(){
 		return board;
 	}
 	public Lokum getLokumAt(int row,int col) {
@@ -106,7 +106,7 @@ public class Board extends JComponent{
 			for (int c=0;c<columnNo;c++){
 				int LokumNum = rand.nextInt(4);
 				board[r][c] = createRandomLokum(LokumNum,r, c);
-				System.out.println(getLokumAt(r, c).lokumColor.toString());
+//				System.out.println(getLokumAt(r, c).lokumColor.toString());
 			}
 		}
 	}
@@ -211,7 +211,7 @@ public class Board extends JComponent{
 				int m = random.nextInt(i + 1);
 				int n = random.nextInt(j + 1);
 
-				GameObjects temp = board[i][j];
+				Lokum temp = board[i][j];
 				board[i][j] = board[m][n];
 				board[m][n] = temp;
 			}

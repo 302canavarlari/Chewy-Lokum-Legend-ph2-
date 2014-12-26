@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
 
 import UserInterface.GameBoardGUI;
 
-public abstract class Lokum extends GameObjects {
+public abstract class Lokum  {
 	/*
 	 * this is an abstract class for different kinds of lokums(basicLokum,specialLokum,...)
 	 * objectType for lokums assigned to be 1.

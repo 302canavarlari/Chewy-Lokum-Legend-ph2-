@@ -1,8 +1,5 @@
 package UserInterface;
 
-
-
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -16,7 +13,6 @@ import javax.swing.JComponent;
 import Domain.Board;
 import Domain.CreateLevels;
 import Domain.GameEngine;
-import Domain.GameObjects;
 import Domain.Lokum;
 import Domain.SaveFileGenerator;
 
@@ -53,6 +49,7 @@ public class GameBoardGUI extends JComponent implements ActionListener{
 	 * @modifies gameBoardGUI
 	 */
 	public GameBoardGUI(int r, int c, InfoBoard panel, boolean startFromSave,boolean IsTimeNecessary) {
+		
 		ib= panel;
 		row = r;
 		column = c;
@@ -214,8 +211,8 @@ public class GameBoardGUI extends JComponent implements ActionListener{
 		int satir,sutun;
 		for (satir=0;satir<row;satir++){
 			for (sutun=0;sutun<column;sutun++){
-				GameObjects GO = gameBoard.getLokumAt(satir, sutun);
-				GO.draw(g);
+				Lokum LO = gameBoard.getLokumAt(satir, sutun);
+				LO.draw(g);
 			}
 		}
 

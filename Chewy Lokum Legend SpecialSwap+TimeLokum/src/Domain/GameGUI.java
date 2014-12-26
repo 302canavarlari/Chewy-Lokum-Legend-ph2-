@@ -11,6 +11,7 @@ package Domain;
 
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Graphics; 
@@ -47,7 +48,7 @@ public class GameGUI extends JFrame {
 
 
 	public GameGUI(Level levelNo, int levelNum) {
-
+		
 		if(!levelNo.IsTimeLevel()){
 			Panel= new InfoBoard(levelNum,false);
 			gb= new GameBoardGUI(levelNo.getRow(),
